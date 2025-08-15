@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Michael Mawuli Kudjo Agbeko - Portfolio</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      color: #333;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      margin: 50px 0 40px;
+    }
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 0;
+      color: #2c3e50;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #7f8c8d;
+    }
+
+    /* Profile Picture */
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 20px auto;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      border: 3px solid #3498db;
+    }
+
+    section {
+      background: white;
+      padding: 25px 30px;
+      margin-bottom: 40px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    h2 {
+      border-bottom: 3px solid #3498db;
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+      color: #2980b9;
+    }
+    .project {
+      margin-bottom: 20px;
+    }
+    .project h3 {
+      margin: 0 0 6px;
+      color: #34495e;
+    }
+    .project p {
+      margin: 5px 0;
+    }
+    a {
+      color: #2980b9;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      margin: 40px 0 20px;
+      color: #95a5a6;
+      font-size: 0.9rem;
+    }
+
+    /* Skill bars CSS */
+    .skills-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .skill-item label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #34495e;
+      font-size: 1rem;
+    }
+
+    .skill-bar {
+      width: 100%;
+      height: 18px;
+      background-color: #ecf0f1;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .skill-level {
+      height: 100%;
+      background-color: #3498db;
+      border-radius: 20px;
+      transition: width 1s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="https://drive.google.com/uc?export=view&id=1qWAS4YwgBJZH_0WXiQbxbH_SHDrlEKby" alt="Michael Mawuli Kudjo Agbeko" style="width: 150px; border-radius: 50%; margin-bottom: 20px;">
+  <h1>Michael Mawuli Kudjo Agbeko</h1>
+  <p>Software Developer | Web Developer | Problem Solver</p>
+</header>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>I am a passionate software developer specializing in building responsive websites and scalable backend services. I love turning ideas into real projects with clean and efficient code.</p>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="project">
+    <h3>Personal Blog Website</h3>
+    <p>A clean blog built with React and Markdown support.</p>
+    <p><strong>Technologies:</strong> React, Markdown, CSS</p>
+    <a href="https://github.com/yourusername/blog-website" target="_blank" rel="noopener">View Project</a>
+  </div>
+  <div class="project">
+    <h3>E-commerce API</h3>
+    <p>A RESTful API for e-commerce platform built with Node.js and Express.</p>
+    <p><strong>Technologies:</strong> Node.js, Express, MongoDB</p>
+    <a href="https://github.com/yourusername/ecommerce-api" target="_blank" rel="noopener">View Project</a>
+  </div>
+  <div class="project">
+    <h3>Portfolio Website</h3>
+    <p>My own programming portfolio built with React.</p>
+    <p><strong>Technologies:</strong> React, CSS, GitHub Pages</p>
+    <a href="https://yourusername.github.io/my-portfolio" target="_blank" rel="noopener">View Project</a>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills-list">
+    <div class="skill-item">
+      <label for="skill-js">JavaScript</label>
+      <div class="skill-bar" id="skill-js">
+        <div class="skill-level" style="width: 60%;"></div>
+      </div>
+    </div>
+
+    <div class="skill-item">
+      <label for="skill-react">React</label>
+      <div class="skill-bar" id="skill-react">
+        <div class="skill-level" style="width: 80%;"></div>
+      </div>
+    </div>
+
+    <div class="skill-item">
+      <label for="skill-node">Node.js</label>
+      <div class="skill-bar" id="skill-node">
+        <div class="skill-level" style="width: 50%;"></div>
+      </div>
+    </div>
+
+    <div class="skill-item">
+      <label for="skill-python">Python</label>
+      <div class="skill-bar" id="skill-python">
+        <div class="skill-level" style="width: 70%;"></div>
+      </div>
+    </div>
+
+    <div class="skill-item">
+      <label for="skill-django">Django</label>
+      <div class="skill-bar" id="skill-django">
+        <div class="skill-level" style="width: 50%;"></div>
+      </div>
+    </div>
+
+    <div class="skill-item">
+      <label for="skill-htmlcss">HTML &amp; CSS</label>
+      <div class="skill-bar" id="skill-htmlcss">
+        <div class="skill-level" style="width: 80%;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Me</h2>
+  <p>Email: <a href="mailto:mykelagbeko3@gmail.com">mykelagbeko3@gmail.com</a></p>
+  <p>LinkedIn: <a href="https://linkedin.com/in/michael-agbeko-997489230" target="_blank" rel="noopener">linkedin.com/in/michael-agbeko-997489230</a></p>
+  <p>GitHub: <a href="https://github.com/Mykel3002" target="_blank" rel="noopener">github.com/Mykel3002</a></p>
+  <p>Twitter: <a href="https://twitter.com/My_kel0" target="_blank" rel="noopener">@My_kel0</a></p>
+  <p>Snapchat: <a href="https://t.snapchat.com/WFnnDLbn" target="_blank" rel="noopener">@myk_iel</a></p>
+  <p>Phone: <a href="tel:+233257992465">+233257992465</a></p>
+</section>
+
+<footer>
+  <p>© 2025 Michael Mawuli Kudjo Agbeko</p>
+</footer>
+
+</body>
+</html>
