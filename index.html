@@ -1,213 +1,457 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Professional portfolio of Michael Mawuli Kudjo Agbeko - Software Developer | Web Developer | Problem Solver">
+  <meta name="keywords" content="portfolio, web developer, software engineer, Ghana, React, Node.js">
+  <meta property="og:title" content="Michael Mawuli Kudjo Agbeko - Portfolio">
+  <meta property="og:description" content="Software Developer specializing in web technologies">
+  <meta property="og:image" content="https://drive.google.com/uc?export=view&id=1qWAS4YwgBJZH_0WXiQbxbH_SHDrlEKby">
   <title>Michael Mawuli Kudjo Agbeko - Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f9f9f9;
-      margin: 0;
-      color: #333;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 20px;
-    }
-    header {
-      text-align: center;
-      margin: 50px 0 40px;
-    }
-    header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 0;
-      color: #2c3e50;
-    }
-    header p {
-      font-size: 1.2rem;
-      color: #7f8c8d;
+    :root {
+      --primary: #6e00ff;
+      --secondary: #00d0ff;
+      --dark: #0f0f1a;
+      --glass: rgba(255, 255, 255, 0.05);
     }
 
-    /* Profile Picture */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(-45deg, #0f0f1a, #1a1a2e, #16213e);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: white;
+      min-height: 100vh;
+      padding: 20px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    header {
+      text-align: center;
+      margin: 30px 0 40px;
+    }
+
     .profile-pic {
       width: 150px;
       height: 150px;
       border-radius: 50%;
       object-fit: cover;
       display: block;
-      margin: 0 auto 20px auto;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      border: 3px solid #3498db;
+      margin: 0 auto 25px;
+      box-shadow: 0 0 20px var(--primary);
+      border: 3px solid var(--primary);
+      transition: transform 0.3s;
     }
 
-    section {
-      background: white;
-      padding: 25px 30px;
-      margin-bottom: 40px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    h2 {
-      border-bottom: 3px solid #3498db;
-      padding-bottom: 8px;
-      margin-bottom: 20px;
-      color: #2980b9;
-    }
-    .project {
-      margin-bottom: 20px;
-    }
-    .project h3 {
-      margin: 0 0 6px;
-      color: #34495e;
-    }
-    .project p {
-      margin: 5px 0;
-    }
-    a {
-      color: #2980b9;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      text-align: center;
-      margin: 40px 0 20px;
-      color: #95a5a6;
-      font-size: 0.9rem;
+    .profile-pic:hover {
+      transform: scale(1.05);
     }
 
-    /* Skill bars CSS */
-    .skills-list {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 10px;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-fill-color: transparent;
+    }
+
+    header p {
+      font-size: clamp(1rem, 3vw, 1.3rem);
+      opacity: 0.8;
       max-width: 600px;
       margin: 0 auto;
     }
 
-    .skill-item label {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 6px;
-      color: #34495e;
-      font-size: 1rem;
+    section {
+      background: rgba(15, 15, 26, 0.8);
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 25px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, border-color 0.3s;
     }
 
-    .skill-bar {
+    section:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary);
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      margin-bottom: 20px;
+      padding-bottom: 8px;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-fill-color: transparent;
+      display: inline-block;
+      border-bottom: 2px solid var(--primary);
+    }
+
+    .project {
+      transition: all 0.4s;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .project:hover {
+      background: rgba(110, 0, 255, 0.1);
+      box-shadow: 0 10px 30px rgba(110, 0, 255, 0.2);
+      border-color: rgba(110, 0, 255, 0.3);
+    }
+
+    .project h3 {
+      font-size: clamp(1.1rem, 3vw, 1.3rem);
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    .project p {
+      opacity: 0.8;
+      margin: 8px 0;
+      font-size: clamp(0.9rem, 2vw, 1rem);
+    }
+
+    .project:hover p {
+      opacity: 1;
+    }
+
+    .project strong {
+      color: var(--secondary);
+    }
+
+    a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+      transition: all 0.3s;
+    }
+
+    a:hover {
+      color: white;
+    }
+
+    a:hover::after {
+      content: '';
+      position: absolute;
       width: 100%;
-      height: 18px;
-      background-color: #ecf0f1;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+      height: 2px;
+      background: var(--secondary);
+      bottom: -2px;
+      left: 0;
+      animation: underline 0.3s forwards;
     }
 
-    .skill-level {
+    @keyframes underline {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .skill-dial {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+
+    .progress-ring {
+      width: 100%;
+      max-width: 120px;
+      height: auto;
+    }
+
+    .progress-ring-circle {
+      stroke-dasharray: 326.56;
+      transform: rotate(-90deg);
+      transform-origin: 50% 50%;
+      stroke-width: 8;
+      fill: transparent;
+    }
+
+    .skill-dial span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-weight: bold;
+      font-size: clamp(1rem, 3vw, 1.2rem);
+    }
+
+    .skill-dial p {
+      margin-top: 15px;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .contact-method {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+    }
+
+    .contact-method i {
+      width: 30px;
+      font-size: 1.2rem;
+      color: var(--secondary);
+      margin-right: 10px;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
       height: 100%;
-      background-color: #3498db;
-      border-radius: 20px;
-      transition: width 1s ease-in-out;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    footer {
+      text-align: center;
+      margin: 60px 0 20px;
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      
+      section {
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .contact-method a {
+        font-size: 0.9rem;
+      }
+    }
+
+    @supports not (backdrop-filter: blur(10px)) {
+      section {
+        background: rgba(15, 15, 26, 0.9);
+      }
     }
   </style>
 </head>
 <body>
+  <div id="particles-js"></div>
+  
+  <div class="container">
+    <header>
+      <img src="https://drive.google.com/uc?export=view&id=1qWAS4YwgBJZH_0WXiQbxbH_SHDrlEKby" 
+           alt="Michael Mawuli Kudjo Agbeko" 
+           class="profile-pic"
+           loading="lazy">
+      <h1>Michael Mawuli Kudjo Agbeko</h1>
+      <p>Software Developer | Web Developer | Problem Solver</p>
+    </header>
 
-<header>
-  <img src="https://drive.google.com/uc?export=view&id=1qWAS4YwgBJZH_0WXiQbxbH_SHDrlEKby" alt="Michael Mawuli Kudjo Agbeko" style="width: 150px; border-radius: 50%; margin-bottom: 20px;">
-  <h1>Michael Mawuli Kudjo Agbeko</h1>
-  <p>Software Developer | Web Developer | Problem Solver</p>
-</header>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I am a passionate software developer specializing in building responsive websites and scalable backend services. I love turning ideas into real projects with clean and efficient code.</p>
+    </section>
 
-<section id="about">
-  <h2>About Me</h2>
-  <p>I am a passionate software developer specializing in building responsive websites and scalable backend services. I love turning ideas into real projects with clean and efficient code.</p>
-</section>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="project">
+        <h3>Personal Blog Website</h3>
+        <p>A clean blog built with React and Markdown support.</p>
+        <p><strong>Technologies:</strong> React, Markdown, CSS</p>
+        <a href="https://github.com/Mykel3002/blog-website" target="_blank" rel="noopener noreferrer">
+          View Project <i class="fas fa-external-link-alt"></i>
+        </a>
+      
+      </div>
+      <div class="project">
+        <h3>Portfolio Website</h3>
+        <p>My own programming portfolio built with React.</p>
+        <p><strong>Technologies:</strong> React, CSS, GitHub Pages</p>
+        <a href="https://mykel3002.github.io/portfolio" target="_blank" rel="noopener noreferrer">
+          View Project <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+    </section>
 
-<section id="projects">
-  <h2>Projects</h2>
-  <div class="project">
-    <h3>Personal Blog Website</h3>
-    <p>A clean blog built with React and Markdown support.</p>
-    <p><strong>Technologies:</strong> React, Markdown, CSS</p>
-    <a href="https://github.com/yourusername/blog-website" target="_blank" rel="noopener">View Project</a>
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-dial">
+          <svg class="progress-ring" viewBox="0 0 120 120">
+            <circle class="progress-ring-circle" stroke="#6e00ff" stroke-dashoffset="65.312" r="52" cx="60" cy="60"/>
+          </svg>
+          <span>80%</span>
+          <p>JavaScript</p>
+        </div>
+        <div class="skill-dial">
+          <svg class="progress-ring" viewBox="0 0 120 120">
+            <circle class="progress-ring-circle" stroke="#6e00ff" stroke-dashoffset="32.656" r="52" cx="60" cy="60"/>
+          </svg>
+          <span>90%</span>
+          <p>React</p>
+        </div>
+        <div class="skill-dial">
+          <svg class="progress-ring" viewBox="0 0 120 120">
+            <circle class="progress-ring-circle" stroke="#6e00ff" stroke-dashoffset="98.968" r="52" cx="60" cy="60"/>
+          </svg>
+          <span>70%</span>
+          <p>Node.js</p>
+        </div>
+        <div class="skill-dial">
+          <svg class="progress-ring" viewBox="0 0 120 120">
+            <circle class="progress-ring-circle" stroke="#6e00ff" stroke-dashoffset="65.312" r="52" cx="60" cy="60"/>
+          </svg>
+          <span>80%</span>
+          <p>HTML/CSS</p>
+        </div>
+        <div class="skill-dial">
+          <svg class="progress-ring" viewBox="0 0 120 120">
+            <circle class="progress-ring-circle" stroke="#6e00ff" stroke-dashoffset="81.64" r="52" cx="60" cy="60"/>
+          </svg>
+          <span>75%</span>
+          <p>Python</p>
+        </div>
+        <div class="skill-dial">
+          <svg class="progress-ring" viewBox="0 0 120 120">
+            <circle class="progress-ring-circle" stroke="#6e00ff" stroke-dashoffset="114.296" r="52" cx="60" cy="60"/>
+          </svg>
+          <span>65%</span>
+          <p>Django</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <div class="contact-method">
+        <i class="fas fa-envelope"></i>
+        <a href="mailto:mykelagbeko3@gmail.com">mykelagbeko3@gmail.com</a>
+      </div>
+      <div class="contact-method">
+        <i class="fab fa-linkedin"></i>
+        <a href="https://linkedin.com/in/michael-agbeko-997489230" target="_blank" rel="noopener noreferrer">
+          linkedin.com/in/michael-agbeko
+        </a>
+      </div>
+      <div class="contact-method">
+        <i class="fab fa-github"></i>
+        <a href="https://github.com/Mykel3002" target="_blank" rel="noopener noreferrer">
+          github.com/Mykel3002
+        </a>
+      </div>
+      <div class="contact-method">
+        <i class="fab fa-twitter"></i>
+        <a href="https://twitter.com/My_kel0" target="_blank" rel="noopener noreferrer">
+          @My_kel0
+        </a>
+      </div>
+      <div class="contact-method">
+        <i class="fab fa-snapchat"></i>
+        <a href="https://t.snapchat.com/WFnnDLbn" target="_blank" rel="noopener noreferrer">
+          @myk_iel
+        </a>
+      </div>
+      <div class="contact-method">
+        <i class="fas fa-phone"></i>
+        <a href="tel:+233257992465">+233 25 799 2465</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>© <span id="year"></span> Michael Mawuli Kudjo Agbeko | All Rights Reserved</p>
+    </footer>
   </div>
-  <div class="project">
-    <h3>E-commerce API</h3>
-    <p>A RESTful API for e-commerce platform built with Node.js and Express.</p>
-    <p><strong>Technologies:</strong> Node.js, Express, MongoDB</p>
-    <a href="https://github.com/yourusername/ecommerce-api" target="_blank" rel="noopener">View Project</a>
-  </div>
-  <div class="project">
-    <h3>Portfolio Website</h3>
-    <p>My own programming portfolio built with React.</p>
-    <p><strong>Technologies:</strong> React, CSS, GitHub Pages</p>
-    <a href="https://yourusername.github.io/my-portfolio" target="_blank" rel="noopener">View Project</a>
-  </div>
-</section>
 
-<section id="skills">
-  <h2>Skills</h2>
-  <div class="skills-list">
-    <div class="skill-item">
-      <label for="skill-js">JavaScript</label>
-      <div class="skill-bar" id="skill-js">
-        <div class="skill-level" style="width: 60%;"></div>
-      </div>
-    </div>
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    // Current year for footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+    
+    // Particles.js initialization
+    if (typeof particlesJS !== 'undefined') {
+      particlesJS("particles-js", {
+        "particles": {
+          "number": { "value": 80 },
+          "color": { "value": "#6e00ff" },
+          "shape": { "type": "circle" },
+          "opacity": { "value": 0.5 },
+          "size": { "value": 3, "random": true },
+          "line_linked": { 
+            "enable": true,
+            "distance": 150,
+            "color": "#6e00ff",
+            "opacity": 0.3,
+            "width": 1
+          },
+          "move": {
+            "enable": true,
+            "speed": 2,
+            "direction": "none",
+            "random": true
+          }
+        }
+      });
+    }
 
-    <div class="skill-item">
-      <label for="skill-react">React</label>
-      <div class="skill-bar" id="skill-react">
-        <div class="skill-level" style="width: 80%;"></div>
-      </div>
-    </div>
-
-    <div class="skill-item">
-      <label for="skill-node">Node.js</label>
-      <div class="skill-bar" id="skill-node">
-        <div class="skill-level" style="width: 50%;"></div>
-      </div>
-    </div>
-
-    <div class="skill-item">
-      <label for="skill-python">Python</label>
-      <div class="skill-bar" id="skill-python">
-        <div class="skill-level" style="width: 70%;"></div>
-      </div>
-    </div>
-
-    <div class="skill-item">
-      <label for="skill-django">Django</label>
-      <div class="skill-bar" id="skill-django">
-        <div class="skill-level" style="width: 50%;"></div>
-      </div>
-    </div>
-
-    <div class="skill-item">
-      <label for="skill-htmlcss">HTML &amp; CSS</label>
-      <div class="skill-bar" id="skill-htmlcss">
-        <div class="skill-level" style="width: 80%;"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <h2>Contact Me</h2>
-  <p>Email: <a href="mailto:mykelagbeko3@gmail.com">mykelagbeko3@gmail.com</a></p>
-  <p>LinkedIn: <a href="https://linkedin.com/in/michael-agbeko-997489230" target="_blank" rel="noopener">linkedin.com/in/michael-agbeko-997489230</a></p>
-  <p>GitHub: <a href="https://github.com/Mykel3002" target="_blank" rel="noopener">github.com/Mykel3002</a></p>
-  <p>Twitter: <a href="https://twitter.com/My_kel0" target="_blank" rel="noopener">@My_kel0</a></p>
-  <p>Snapchat: <a href="https://t.snapchat.com/WFnnDLbn" target="_blank" rel="noopener">@myk_iel</a></p>
-  <p>Phone: <a href="tel:+233257992465">+233257992465</a></p>
-</section>
-
-<footer>
-  <p>© 2025 Michael Mawuli Kudjo Agbeko</p>
-</footer>
-
+    // Add smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
 </body>
 </html>
